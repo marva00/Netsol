@@ -1,0 +1,290 @@
+.auth-page {
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.auth-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px; /* Reduced from 640px to make it smaller */
+  padding: 32px; /* Reduced from 40px */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.back-bar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #f3f4f6;
+}
+
+.auth-title {
+  font-size: 1.75rem; /* Reduced from 2rem */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.auth-subtitle {
+  color: #666;
+  margin-bottom: 24px; /* Reduced from 30px */
+  font-size: 0.95rem; /* Slightly smaller */
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased from 16px for better spacing */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.role-group {
+  display: flex;
+  gap: 8px; /* Reduced gap for better fit */
+  justify-content: space-between; /* Ensure equal distribution */
+}
+
+.role-option {
+  position: relative;
+  flex: 1; /* Make all role options equal width */
+}
+
+.role-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.role-option label {
+  display: block; /* Changed from inline-block to block */
+  width: 100%; /* Full width of container */
+  padding: 12px 8px; /* Adjusted padding for better fit */
+  border: 2px solid #ddd;
+  border-radius: 8px; /* Slightly less rounded for compact look */
+  cursor: pointer;
+  user-select: none;
+  color: #333;
+  transition: 0.25s ease;
+  font-weight: 600;
+  font-size: 0.9rem; /* Slightly smaller font */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.role-option input[type="radio"]:focus + label {
+  box-shadow: 0 0 0 3px rgba(255, 123, 44, 0.25);
+}
+
+.role-option input[type="radio"]:checked + label {
+  background: linear-gradient(135deg, #ff7b2c, #ff9557);
+  color: #fff;
+  border-color: transparent;
+}
+
+.auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 12px 14px; /* Slightly reduced padding */
+  border: 2px solid #ddd;
+  border-radius: 10px; /* Slightly reduced border radius */
+  font-size: 15px; /* Slightly smaller font */
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+  border-color: #ff7b2c;
+  box-shadow: 0 0 8px rgba(255, 123, 44, 0.2);
+  outline: none;
+}
+
+/* Error state for inputs */
+.auth-form input.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  text-align: left;
+  padding-left: 2px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #ff7b2c, #ff9557);
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Slightly reduced border radius */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 14px 24px;
+  margin-top: 8px; /* Small top margin */
+}
+
+.primary-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(255, 123, 44, 0.35);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.link-row {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px; /* Added margin top */
+}
+
+.auth-link {
+  color: #ff7b2c;
+  text-decoration: none;
+  font-size: 0.9rem; /* Slightly smaller */
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .auth-card {
+    max-width: 100%;
+    padding: 24px; /* Further reduced padding on mobile */
+    margin: 20px;
+  }
+  
+  .auth-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .role-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .role-option label {
+    font-size: 1rem; /* Normal font size on mobile */
+    padding: 14px;
+  }
+  
+  .auth-actions {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 40px 16px;
+  }
+  
+  .auth-card {
+    padding: 20px;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Signup role chooser */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.choice-card {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.choice-title {
+  font-weight: 700;
+  color: #333;
+  margin: 6px 0 8px;
+}
+
+.choice-desc {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.choice-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #ff7b2c;
+  border: 2px solid #ff7b2c;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 123, 44, 0.1);
+}
+
+@media (max-width: 900px) {
+  .choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
